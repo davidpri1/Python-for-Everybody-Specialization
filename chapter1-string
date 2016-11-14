@@ -1,4 +1,4 @@
-
+, 
 # a program to find the most common word in a text file
 
 name = raw_input ('Enter file:')
@@ -23,5 +23,6 @@ print bigword, bigcount
 # class exec in raise continue finally is return def for lambda try
 
 # functions:
-# quit()
+# quit(), 42%10 ->2 (modulus operator, operand), x = int(98.6) ->98
 
+# new worlds: mnemonic,Parenthesis,concatenate, floor division, integer, precedence, boolean
