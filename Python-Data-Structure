@@ -1,1 +1,10 @@
 # Chapters 6-11
+
+# Chapter 6 String
+text = "X-DSPAM-Confidence:    0.8475";
+pos = text.find('0')
+#print pos
+str_output = text[pos:]
+flo_output = float (str_output)
+print flo_output
+
