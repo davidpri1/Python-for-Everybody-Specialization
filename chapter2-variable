@@ -1,0 +1,20 @@
+#1
+name = raw_input('Enter your name:\n')
+print "Hello %s!"  %name
+#2
+hours= int(raw_input('Enter hours:\n'))
+rate = float(raw_input('Enter rate:\n'))
+pay = hours * rate
+print "Pay: %.2f" %pay    # round() to two decimal
+#3
+x=17
+y=12.0
+a1= x/2
+print a1, type(a1)  # 8 <int>
+a2 = x/2.0
+print a2, type (a2) # 8.5 <float>
+a3= y/3
+print a3, type (a3)  #4.0 <float>
+
+#°F to °C	Deduct 32, then multiply by 5, then divide by 9
+#°C to °F	Multiply by 9, then divide by 5, then add 32
