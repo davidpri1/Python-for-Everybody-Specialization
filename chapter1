@@ -1,3 +1,4 @@
+
 # a program to find the most common word in a text file
 
 name = raw_input ('Enter file:')
@@ -16,3 +17,11 @@ for word, count in counts.items():
     bigcount = count
 
 print bigword, bigcount
+
+# 31 reserved keywords
+# and del from not while as elif global or with assert else if pass yield break except import print 
+# class exec in raise continue finally is return def for lambda try
+
+# functions:
+# quit()
+
