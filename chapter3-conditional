@@ -2,6 +2,7 @@
 # Even if more than one condition is true, only the ﬁrst true branch executes
 # short-circuit, and y!=0 and (x/y)>2 
 
+# Exercise1
 inp = raw_input('Enter Fahrenheit Temperature:') 
 try: 
   fahr = float(inp) 
@@ -10,6 +11,7 @@ try:
 except: 
   print 'Please enter a number'   #catching an exception
 
+# Exercise2
 try:
     hours= int(raw_input('Enter hours:\n'))
     rate = float(raw_input('Enter rate:\n'))
@@ -21,5 +23,22 @@ try:
         else:
             print hours*rate
 except:
-    print "hours and rate must be a number" 
+    print "please enter numeric input" 
 
+# Exercise3
+try:
+    score= float(raw_input("Enter a score:"))  #included in try clause
+    if score >= 0.0 and score < 0.6:
+        print "F"
+    elif score >= 0.6 and score <0.7:
+        print "D"
+    elif score >= 0.7 and score < 0.8:
+        print "C"
+    elif score >= 0.8 and score < 0.9:
+        print "B"
+    elif score >= 0.9 and score <=1.0:
+        print "A"
+    else: print "Bad score"
+
+except:
+    print "Bad score"
