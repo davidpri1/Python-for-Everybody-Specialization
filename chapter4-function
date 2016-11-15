@@ -1,1 +1,58 @@
+# type(),max(),min(), len() -- including space, beginning with 1, int(3.9)==3, float(),str(), deterministic, pseudorandom
+import random # module object
+for i in range(10): # print 10 output numbers
+  x = random.random() # returns a random float between 0.0 and 1.0 (including 0.0 but not 1.0)
+  print x
+  
+# randint() takes the parameters low and high, and returns an integer between low and high (including both)
+random.randint (5,10) # dot notation: random. is a moduel name, randint()/random()/choice() are function names within this moduel
+t= [1,2,3]
+random.choice(t)
+# Gaussian, exponential, gamma
 
+import math
+# math.log10(ratio)------- computes the logarithm base 10 of ratio ----- log() is base e
+# math.sin (radians), cos(), tan(), radians = degrees / 360.0 *2 * math.pi
+# math.sqrt(2)/2.0, math.pow takes base and exponent
+
+def print_lyrics(): # function defination, the value of print_lyrics is a function object
+    print "I am a lumberjack" # indentation is always four spaces
+def repeat_lyrics():    
+    print_lyrics()
+    print_lyrics()
+>>> repeat_lyrics() # fucntion call: function name followed by an argument list
+
+# parameter and augument
+def print_twice(bruce) # bruce is parameter, no meaning, like x
+    print bruce
+    print burce
+# print_twice (math.cos(math.pi)) 
+michael = "Eric, the half a bee."
+print_twice(michael) # the name of the variable passed as an argument(michael) has nothing to do with the name of parameter(bruce）
+                     # here in print_twice(), we call everybody bruce
+                     
+
+def addtwo(a, b): 
+    added = a + b 
+    return added
+x = addtwo(3, 5) 
+print x
+# addtwo function was called with 3 and 5 as arguments. Within the function, the parameters a and b were 3 and 5 respectively. 
+# The function computed the sum of the two numbers and placed it in the local function variable named added. 
+# Then it used the return statement to send the computed value back to the calling code as the function result, which was assigned to the variable x and printed out.
+
+# Exercise1
+def computepay (hours, rate):
+    if hours > 40:
+        x = 40 * rate + (hours-40) * rate * 1.5
+    else:
+        x = hours * rate
+    return x
+
+pay = computepay (45,10)
+print pay
+
+# Exercise2
+
+
+  
