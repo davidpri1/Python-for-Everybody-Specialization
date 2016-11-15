@@ -1,5 +1,6 @@
 # comparison operators ==, x!= y, x is y, x is not y, not (x > y), 17 and true -> true
 # Even if more than one condition is true, only the ﬁrst true branch executes
+# short-circuit, and y!=0 and (x/y)>2 
 
 inp = raw_input('Enter Fahrenheit Temperature:') 
 try: 
@@ -9,6 +10,16 @@ try:
 except: 
   print 'Please enter a number'   #catching an exception
 
-#short-circuit, and y!=0 and (x/y)>2 
-
+try:
+    hours= int(raw_input('Enter hours:\n'))
+    rate = float(raw_input('Enter rate:\n'))
+    if hours < 0 or rate < 0:
+        print "hours and rate can't be negative"
+    else:
+        if hours > 40:
+            print  40*rate +(hours-40)*rate*1.5  # "expected an indented block"
+        else:
+            print hours*rate
+except:
+    print "hours and rate must be a number" 
 
