@@ -15,7 +15,7 @@ for word, count in counts.items(): #items() is a pair
     # print word,count 
     # check how items() read the file
     if bigcount is None or count > bigcount: #output is the FIRST word hit the frequency
-    #if bigcount is None or count >= bigcount: #output is the lAST word hit the frequency
+    #if bigcount is None or count >= bigcount: #output is the LAST word hit the frequency
         bigword = word
         bigcount = count
     # for loop doesn't need "else"
