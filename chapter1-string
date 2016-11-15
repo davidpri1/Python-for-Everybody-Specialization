@@ -1,4 +1,3 @@
-, 
 # a program to find the most common word in a text file
 
 name = raw_input ('Enter file:') #C:\Users\Sharon\Desktop\Python\cmd.txt
@@ -31,3 +30,30 @@ print bigword, bigcount
 # quit(), 42%10 ->2 (modulus operator, operand), x = int(98.6) ->98
 
 # new worlds: mnemonic,Parenthesis,concatenate, floor division, integer, precedence, boolean
+
+name = raw_input ('Enter file:') #C:\Users\Sharon\Desktop\Python\cmd.txt
+handle = open (name, 'r')
+text = handle.read()
+words = text.split()
+counts = dict() # define a dictionary called counts
+
+# My bonus exercies: there are two words, both are used most
+for word in words:
+    counts[word] = counts.get(word,0) +1
+bigcount1 = None  # None can be any type
+bigword1 = None
+bigword2 = None
+for word, count in counts.items(): #items() is a pair
+    # print word,count
+    # check how items() read the file
+    if bigcount1 is None or count > bigcount1: #output is the FIRST word hit the frequency
+    #if bigcount is None or count >= bigcount: #output is the lAST word hit the frequency
+        bigword1 = word
+        bigcount1 = count
+    elif count == bigcount1: # == means equal, '=' is assigning value to a variable
+        bigword2 = word #indentation
+
+    # for loop doesn't need "else"
+
+print bigword1, bigcount1
+print bigword2, bigcount1
