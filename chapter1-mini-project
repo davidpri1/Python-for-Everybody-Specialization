@@ -4,7 +4,7 @@ name = raw_input ('Enter file:') #C:\Users\Sharon\Desktop\Python\cmd.txt
 handle = open (name, 'r')
 text = handle.read()
 words = text.split()
-counts = dict() # define a dictionary called counts
+counts = dict() # define a function in dictonary, which will be called later
 
 for word in words:
     counts[word] = counts.get(word,0) +1
