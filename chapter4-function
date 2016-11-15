@@ -72,5 +72,13 @@ try:
 except:
     print "Bad score"
 
+# Q:In Python, how do you indicate the end of the block of code that makes up the function?
+# A:You de-indent a line of code to the same indent level as the def keyword
+def stuff():
+    print 'Hello'
+    return
+    print 'World' # this line will never be executed
+
+stuff()
 
   
