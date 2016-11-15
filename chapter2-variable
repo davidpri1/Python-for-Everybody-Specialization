@@ -1,12 +1,14 @@
-#1
+# Exercise1
 name = raw_input('Enter your name:\n')
 print "Hello %s!"  %name
-#2
+
+# Exercise2
 hours= int(raw_input('Enter hours:\n'))
 rate = float(raw_input('Enter rate:\n'))
 pay = hours * rate
 print "Pay: %.2f" %pay    # round() to two decimal
-#3
+
+# Exercise3
 x=17
 y=12.0
 a1= x/2
