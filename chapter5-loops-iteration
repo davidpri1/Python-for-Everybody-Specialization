@@ -74,5 +74,36 @@ except:
         count = count + 1
         avg = total/count
     print total, count, avg
+    
+# Exercises 2:prompts for a list of numbers 
+total = 0
+count = 0
+mini = 0
+maxi = 0
+try:
+    enters = raw_input('Enter a number:') #4,5,bad data,7,done (NO SPACE!!)
+    enterlist = enters. split(',') #['4', '5', 'bad data', ' 7', ' done']
+    for i in enterlist: #erro "unexpected indent" if this line has block
+        if i == 'done':
+            break      # ignore the enters after "done" was put
+        total = total + float(i)
+        count = count + 1
+        if mini is 0 or i < mini:
+            mini = i
+        if maxi is 0 or i > maxi:
+            maxi = i
+        sub_enterlist = enterlist[count+1:] # [] position starting from '0'
+    print total, count, mini, maxi
+except:
+    for i in sub_enterlist: # if bad data, skip and continue from next number
+        if i == 'done':  
+            break # jump out of loop means starting from the line that has no block compared with for clause
+        total = total + float(i)   # bad data can only appear once because only one except clause?
+        count = count + 1
+        if mini is 0 or i < mini:
+            mini = i
+        if maxi is 0 or i > maxi:
+            maxi = i
+    print total, count, mini, maxi # this is the line which means for loop ends (NO BLOCK)
 
 
