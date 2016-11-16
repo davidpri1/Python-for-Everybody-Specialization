@@ -1,5 +1,5 @@
 # finite, infinite, continue, break
-while True:
+while True: # must use'True', not 'true'; 'while', not 'While'
     line = raw_input('> ') # "print this!"
     if line[0] == "#": # don't print this
         continue # it ends the current iteration
