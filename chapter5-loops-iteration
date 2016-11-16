@@ -45,7 +45,7 @@ def min(values):
     for i in values:
         if smallest is None or i < smallest:
             smallest = i
-    return smallest
+    return smallest  # 'return' only used in def, loop used print
 print min('book')
 
 # len(), sum(), max(), min(),  mid-point check
