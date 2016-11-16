@@ -42,14 +42,17 @@ print x
 # Then it used the return statement to send the computed value back to the calling code as the function result, which was assigned to the variable x and printed out.
 
 # Exercise1
-def computepay (hours, rate):
-    if hours > 40:
-        x = 40 * rate + (hours-40) * rate * 1.5
+def computepay (h, r):
+    if h > 40:
+        x = 40 * r + (h-40) * r * 1.5
+        return x
     else:
-        x = hours * rate
-    return x
-
-pay = computepay (45,10)
+        x = h * r
+        return x
+        
+hours = float(raw_input("Enter Hours:"))
+rate = float(raw_input("Enter Rate:"))
+pay = computepay (hours,rate)
 print pay
 
 # Exercise2
