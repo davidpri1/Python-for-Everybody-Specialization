@@ -51,3 +51,28 @@ print min('book')
 # len(), sum(), max(), min(),  mid-point check
 # initialize: An assignment that gives an initial value to a variable that will be updated
 
+# Exercises 1: keeep calculating until put done; if bad input, skip and continue enter next and continue calculating
+total = 0
+count = 0
+try:
+    while True:
+        enters = raw_input('Enter a number:')
+        if enters == 'done':
+            break
+        total = total + float(enters)
+        count = count + 1
+        avg = total/count
+    print total, count, avg
+except:
+    print "Invalid input"
+    while True:
+        enters = raw_input('Enter a number:')  
+        #if bad input happen twice, how to revise the code?
+        if enters == 'done':
+            break
+        total = total + float(enters)
+        count = count + 1
+        avg = total/count
+    print total, count, avg
+
+
