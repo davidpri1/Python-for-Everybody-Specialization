@@ -79,7 +79,7 @@ except:
 total = 0 # must use 0 to initialize when calculate ( total = total + float(i))
 count = 0
 mini = None # can use None to initialize if only assgining, not calculating ( mini = i)
-maxi = None
+maxi = None # Must be None(reserved), not none(variable)
 try:
     enters = raw_input('Enter a number:') #4,5,bad data,7,done (NO SPACE!!)
     enterlist = enters. split(',') #['4', '5', 'bad data', ' 7', ' done']
