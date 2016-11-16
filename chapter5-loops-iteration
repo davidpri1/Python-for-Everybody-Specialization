@@ -1,1 +1,34 @@
+# finite, infinite
+while True:
+    line = raw_input('> ') # "print this!"
+    if line[0] == "#": # don't print this
+        continue # it ends the current iteration
+        # and jumps back to the while statement to start the next iteration
+    if line == 'done':
+        break # it ends the current iteration and GET OUT OF the iteration
+        # the output is "DONE!", case sensitive
+    print line
+print 'DONE!'
 
+# for loop
+friends = ['Joseph', 'Glenn', 'Sally']
+for i in friends: # i is iteration variable in loop and friends are variables
+    print 'Happy New Year:', i
+print 'Done!' # ctrl + x is delete line; this print is not in the body of the for loop
+
+# counting and summing
+count = 0
+for i in [3,5,76,24,0,97]:
+    # while we do not use i in the loop
+    # it caused the loop body to be executed once for each of the values in the list
+    count = count + 1
+print "Count:", count
+
+sumup = 0
+for i in [3,5,76,24,0,97]:
+    sumup = sumup + i
+    #In this loop we do use the iteration variable #Instead of simply adding one to the count as in the previous loop, 
+    #we add the actual number, the variable sumup is the “running total of the values so far”   # i is a  accumulator
+print "The sum of list is:", sumup
+
+# len(), sum()
