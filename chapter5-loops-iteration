@@ -1,9 +1,9 @@
-# finite, infinite
+# finite, infinite, continue, break
 while True:
     line = raw_input('> ') # "print this!"
     if line[0] == "#": # don't print this
         continue # it ends the current iteration
-        # and jumps back to the while statement to start the next iteration
+        # and jumps back to the "top" of the loop to start the next iteration
     if line == 'done':
         break # it ends the current iteration and GET OUT OF the iteration
         # the output is "DONE!", case sensitive
@@ -31,4 +31,23 @@ for i in [3,5,76,24,0,97]:
     #we add the actual number, the variable sumup is the “running total of the values so far”   # i is a  accumulator
 print "The sum of list is:", sumup
 
-# len(), sum()
+# Maximum and minimum 
+largest = None
+print "Before:", largest
+for i in [3, 41, 12, 9, 74, 15]:
+    if largest is None or i > largest: # see a value that is larger than the “largest so far”. 
+        largest = i # next line no block means if clause is ends in this line
+    print "Loop:", i, largest # when i is 12, which is less than the largest number so far 41, so not update largest 
+print "After:", largest
+
+def min(values):
+    smallest = None
+    for i in values:
+        if smallest is None or i < smallest:
+            smallest = i
+    return smallest
+print min('book')
+
+# len(), sum(), max(), min(),  mid-point check
+# initialize: An assignment that gives an initial value to a variable that will be updated
+
