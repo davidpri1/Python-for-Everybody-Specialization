@@ -29,6 +29,7 @@ for i in fruit:
 >>> print new_greeting 
 
 # frequency??
+# Exercise 6.3 Encapsulate this code in a function named count, and generalize it so that it accepts the string and the letter as arguments.
 word = 'banana'
 count = 0
 for i in word:
