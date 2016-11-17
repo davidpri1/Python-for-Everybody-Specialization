@@ -1,0 +1,37 @@
+text = "X-DSPAM-Confidence:    0.8475";
+pos = text.find('0') # beginning with "0" position # return only the first finding, then stop
+str_output = text[pos:] # []beginning with "0" position; len() starts with "1" 
+# last=fruit[len(fruit)-1] is the same as last = fruit[-1]
+flo_output = float (str_output)
+print flo_output
+
+# traversal through a string
+i = 0
+fruit = 'banana'
+while i < len(fruit):
+    print fruit[i]
+    i = i + 1
+;
+i = 0
+fruit = 'banana'
+for i in fruit:
+    print i
+
+# string slice, The operator [n:m] including the ﬁrst but excluding the last.
+>>> fruit[:3] 'ban' # starting from the first letter of string 
+>>> fruit[3:] 'ana' # starting from the 3rd position of the string
+>>> fruit[3:3] '' # this is an empty string
+>>> fruit[:] 'banana'
+
+# strings are immutable
+>>> greeting = 'Hello, world!' 
+>>> new_greeting = 'J' + greeting[1:] 
+>>> print new_greeting 
+
+# frequency??
+word = 'banana'
+count = 0
+for i in word:
+    if i == 'a':
+        count = count +1
+print count # When the loop exits, count contains the result
