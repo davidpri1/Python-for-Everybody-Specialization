@@ -51,4 +51,22 @@ enter_word = raw_input("Enter words:") #'banana'
 enter_letter = raw_input("Enter words:") #'a'as letteror "an" as string
 print count(enter_word,enter_letter)
 
+# words in alphabetical order;uppercase letters come BEFORE all the lowercase letters(means SMALL);
+# convert to all lowercase before performing the comparison
+word = 'Pinapple'
+if word < 'banana':
+    print 'Your word,' + word + ', comes before banana.' #'P'
+elif word > 'banana':
+    print 'Your word', word, 'comes after banana.' #'p'
+else:
+    print 'All right, bananas.'
+
+# dir(object)lists the methods available for an object, the object can be string, float, etc.eg.capitalize() is a method of string
+# help(str.capitalize) # method description
+# https://docs.python.org/2/library/stdtypes.html# string-methods
+# Instead of the function syntax upper(word), it uses the method syntax word.upper();invoking upper on the word
+# strip(), remove white space (spaces, tabs, or newlines) at the beginning and at the end of a string, (keep the middle space)
+# make multiple method calls in a single expression; print line.lower().startswith('p') # True 
+
+
 
