@@ -68,5 +68,8 @@ else:
 # strip(), remove white space (spaces, tabs, or newlines) at the beginning and at the end of a string, (keep the middle space)
 # make multiple method calls in a single expression; print line.lower().startswith('p') # True 
 
+word = 'banana'
+index = word.find('na', 3) # search 'na' starting from the 3rd position
+print index # 4
 
 
