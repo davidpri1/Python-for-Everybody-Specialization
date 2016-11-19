@@ -73,4 +73,4 @@ word = 'banana'
 index = word.find('na', 3) # search 'na' starting from the 3rd position
 print index # 4
 
-
+https://docs.python.org/2/library/stdtypes.html
