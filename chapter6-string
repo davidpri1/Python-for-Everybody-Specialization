@@ -52,6 +52,11 @@ enter_word = raw_input("Enter words:") #'banana'
 enter_letter = raw_input("Enter words:") #'a'as letteror "an" as string
 print count(enter_word,enter_letter)
 
+# str.count()
+print word.count('a') # 3
+print word.count('a',2,5) # 1
+# excluding the 5th position
+
 # words in alphabetical order;uppercase letters come BEFORE all the lowercase letters(means SMALL);
 # convert to all lowercase before performing the comparison
 word = 'Pinapple'
