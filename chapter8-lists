@@ -23,3 +23,35 @@ while True:
     val = float(inp)
     numlist.append(val) # append to itself
 print sum(numlist)/len(numlist)
+
+# deleting elements
+t = ['a','b','c','d','e','f']
+x = t.pop(1) #pop() modifies the list and returns the element that was removed
+print t #['a','c','d','e','f']
+x = t.pop() #id don't provide index, removing x= last element
+print t #['a','c','d','e']
+del t[1:2]#if don't need removed value, use del operator
+#the slice doesn't include the 2nd index
+print t #['a','d','e']
+t.remove('d') #
+print t #['a','e']
+
+# Lists and strings
+s='spam'
+print list(s)
+s='pining for the fjords'
+print s.split()
+s='spam-spam-spam'
+delimiter='-'
+print s.split(delimiter)
+t=['pining', 'for', 'the', 'fjords']
+delimiter=' '
+print delimiter.join(t)
+
+# Parsing lines
+handle = open('C:\Users\Sharon\Desktop\Python\code\mbox.txt')
+for line in handle:
+    line = line.rstrip()
+    if not line.startswith("From "): continue
+    mylist = line.split()
+    print mylist[2]
