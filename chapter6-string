@@ -94,10 +94,10 @@ camels = 42
 print '%d' % camels # 42 but now it's string
 
 # debugging
-while True: # unless " " (don't enter anything), otherwise always True
+while True: ## ALWAYS true even if you don't enter anthing, must with a break clause;
     line = raw_input ('> ')
-    if len(line) != 0 and line[0] == '#': # len() is always >=0  # debugging: adding guardian if len(line)>0
-    # if line.startswith('#'), if nothing entered, return is False, not errror message
+    if len(line) != 0 and line[0] == '#': # len() is always >=0  # debugging: adding guardian if len(line)>0 and.. :
+    # if line.startswith('#'): , if nothing entered, return is False, not errror message
     # if enter nothing, no 0th position, so line[0] will cause error message
         continue # ignore all below, loop another round
     if line == 'done':
@@ -105,4 +105,14 @@ while True: # unless " " (don't enter anything), otherwise always True
     print line # if enter nothing, print nothing
 print "Done!"
 
+# True ??
+The rule for strings is that an empty string is considered False, a non-empty string is considered True; 
+A numerical value of 0 is considered false;
+All other expressions are considered True 
+
+# index() is similar to find(), but str.find returns -1 when it does not find the substring.While str.index raises ValueError:
+# join()
+s = "-";
+seq = ("a", "b", "c"); # This is sequence of strings.
+print s.join( seq ) # a-b-c
 
