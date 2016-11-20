@@ -76,6 +76,8 @@ else:
 
 word = 'banana'
 index = word.find('na', 3) # search 'na' starting from the 3rd position
+# find(sub[, start[, end]]), the brackets indicate optional arguments. 
+# So sub is required, but start is optional, and if you include start, then end is optional.
 print index # 4
 
 https://docs.python.org/2/library/stdtypes.html
