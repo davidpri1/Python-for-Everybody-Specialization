@@ -34,7 +34,7 @@ for line in handle:
         continue
     print line # processing interesting lines only
     
-# 0
+#  write mode clears out the old data and starts fresh, so be careful! If the ﬁle doesn’t exist, a new one is created.
 try:
     handle = open('C:\Users\Sharon\desktop\python\code\mbox.txt','w')
 except:
@@ -42,7 +42,8 @@ except:
     exit()
 line1 = "This here's the wattle,\n"
 handle.write(line1)
-line2 = 'the emblem of our land.\n'
+line2 = 'the emblem of our land.\n' 
+# The print statement automatically appends a newline, but the write method does not add the newline automatically.
 handle.write(line2)
 handle.close()
 
@@ -50,3 +51,21 @@ handle2 = open('C:\Users\Sharon\desktop\python\code\mbox.txt')
 for line in handle2:
     line = line.rstrip()
     print line
+
+# debugging : move files between different systems, \n or \r (return) issue, wikipedia.org/wiki/ Newline.
+# Exercises 1
+filepath = raw_input('Enter full path of the file:') # C:\Users\Sharon\desktop\python\code\mbox-short.txt
+handle =  open(filepath)
+count = 0
+total = 0
+for line in handle:
+    line = line.rstrip()
+    if line.startswith('X-DSPAM-Confidence:'):
+        count = count + 1
+        pos = line.find(' ')
+        subline = line[pos+1:]
+        total = total + float(subline)
+avg = total / count
+print "There are", count, "lines I am interested in." # \n if want double lines space
+print "The average is", avg
+
