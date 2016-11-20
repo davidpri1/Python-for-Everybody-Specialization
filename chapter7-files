@@ -1,1 +1,14 @@
+>>> stuff = 'Hello\nWorld!' #backslash-n
+>>> print stuff # can't included any operator (e.g.= ) in print clause
+Hello
+World! 
+>>> stuff = 'X\nY' >>>len(stuff) ＃3 characters
 
+handle = open ('mbox.txt','r')
+count = 0
+for line in handle: 
+# for loop read data one line at a time, then couted, and then discarded
+    count = count +1
+print 'Line Count:', count
+# If you know the ﬁle is relatively small. text = handle.read() 
+# all the characters including all of the lines and newline characters are one big string in the variable
