@@ -1,1 +1,25 @@
+# If an index has a negative value, it counts backward from the end of the list
+# If you try to read or write an element that does not exist, you get an IndexError.
+numbers = [1,2,3,4]
+for i in range(len(numbers)): # range returns a list of index of list from 0 to n-1
+    numbers[i] = numbers[i] * 2
+numbers2 = numbers # [2,4,6,8]
+numbers2[1:3] = [0,0] # [2,0,0,8]
+numbers3 = ['a','b','c','d']
+numbers3 = [5,6,7,8]
+numbers2.extend(numbers3) # extend()
+print numbers2 # [2,0,0,8,5,6,7,8]
+numbers2.sort() # sort() arranges the elements of the list from low to high
+# sort means sorting yourself
+# print numbers2.sort() THIS IS WRONG
+print numbers2
 
+# build a list from scratch
+numlist = list() # make an empty list before the loop starts
+while True:
+    inp = raw_input('Enter a number:')
+    if inp == 'done':
+        break
+    val = float(inp)
+    numlist.append(val) # append to itself
+print sum(numlist)/len(numlist)
