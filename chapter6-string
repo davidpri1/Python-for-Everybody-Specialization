@@ -79,3 +79,30 @@ index = word.find('na', 3) # search 'na' starting from the 3rd position
 print index # 4
 
 https://docs.python.org/2/library/stdtypes.html
+# parsing string
+data = 'From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008'
+pos1 = data.find("@")
+pos2 = data.find(" ",pos1)
+subdata = data[pos1+1:pos2] # excluding pos2
+print subdata # can't print subdata = ... directly
+
+# format operator
+# uses '%d' to format an integer, '%g' to format a ﬂoatingpoint number, and '%s' to format a string
+print 'In %d years I have spotted %g %s.' % (3, 0.1, 'camels')
+# convert 42 from integer to string
+camels = 42
+print '%d' % camels # 42 but now it's string
+
+# debugging
+while True: # unless " " (don't enter anything), otherwise always True
+    line = raw_input ('> ')
+    if len(line) != 0 and line[0] == '#': # len() is always >=0  # debugging: adding guardian if len(line)>0
+    # if line.startswith('#'), if nothing entered, return is False, not errror message
+    # if enter nothing, no 0th position, so line[0] will cause error message
+        continue # ignore all below, loop another round
+    if line == 'done':
+        break
+    print line # if enter nothing, print nothing
+print "Done!"
+
+
