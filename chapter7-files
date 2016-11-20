@@ -4,11 +4,49 @@ Hello
 World! 
 >>> stuff = 'X\nY' >>>len(stuff) ＃3 characters
 
-handle = open ('mbox.txt','r')
-count = 0
-for line in handle: 
-# for loop read data one line at a time, then couted, and then discarded
-    count = count +1
-print 'Line Count:', count
+filepath = raw_input('Enter the full path of the file:')
+# handle = open('C:\Users\Sharon\desktop\python\code\mbox.txt','r')
+try:
+    handle = open(filepath)  # default is read only
+# print handle
+# PS C:\Users\Sharon\desktop\python> python prog1.py
+except:
+    print "The file doesn't exist"
+    exit()
+count1 = 0
+count2 = 0
+for line in handle: # for loop read data one line at a time, then couted, and then discarded
+    count1 = count1 +1
+    # print line # print the whole file / clear the powershell
+    line = line.rstrip() # aviod two \n 's which caused double spacing 
+    if line.startswith('From:'):
+        print line # print adds another newline
+        count2 = count2 +1
+print 'Line Count:', count1
+print 'There are', count2, 'subject lines in', filepath
 # If you know the ﬁle is relatively small. text = handle.read() 
 # all the characters including all of the lines and newline characters are one big string in the variable
+for line in handle:
+    line = line.rstrip()
+    if not line.startswith('From:'): # skip uninteresting lines
+    # if not '@uct.ac.za' in line:
+    # if line.find('@uct.ac.za') == -1: 
+        continue
+    print line # processing interesting lines only
+    
+# 0
+try:
+    handle = open('C:\Users\Sharon\desktop\python\code\mbox.txt','w')
+except:
+    print "The file doesn't exist"
+    exit()
+line1 = "This here's the wattle,\n"
+handle.write(line1)
+line2 = 'the emblem of our land.\n'
+handle.write(line2)
+handle.close()
+
+handle2 = open('C:\Users\Sharon\desktop\python\code\mbox.txt')
+for line in handle2:
+    line = line.rstrip()
+    print line
