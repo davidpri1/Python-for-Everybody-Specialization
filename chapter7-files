@@ -69,3 +69,20 @@ avg = total / count
 print "There are", count, "lines I am interested in." # \n if want double lines space
 print "The average is", avg
 
+# Exercises 2
+filepath = raw_input('Enter full path of the file:')# C:\Users\Sharon\desktop\python\code\mbox-short.txt
+if filepath == 'na na boo boo':
+    print "NA NA BOO BOO TO YOU - You have been punk'd!"
+    quit()
+try:
+    handle =  open(filepath)
+except:
+    print "File cannot be opened:", filepath
+    quit() # quit this program
+    # if not add quit(), the program will continue run below and get error
+count = 0
+for line in handle:
+    line = line.rstrip()
+    if line.startswith('X-DSPAM-Confidence:'):
+        count = count + 1
+print "There are", count, "lines I am interested in in", filepath
