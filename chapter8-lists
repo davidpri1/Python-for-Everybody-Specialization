@@ -86,6 +86,15 @@ print word #a, b, c,d
 # 2. Pick an idiom and stick with it. t.append(x) or t = t + [x]  # t means a list
 # 3. Make copies to avoid aliasing, orig = t[:], t.sort()
 # 4. Lists, split, and ﬁles; pieces = emails.split('@'); thing = line.split(";"), split() default to be space
+fhand = open('mbox-short.txt')  # catch (try/except) if file doesn't exit, open() caused error
+count = 0 
+for line in fhand: 
+    words = line.split() 
+    # print 'Debug:', words 
+    if len(words) == 0 : continue  #guardian statement, so words[0] will not fail
+    if words[0] != 'From' : continue 
+    print words[2]
+
 
 # Exercise 2: For each word on each line check to see if the word is already in the list and if not append it to the list. 
 fname = raw_input("Enter file name: ")
