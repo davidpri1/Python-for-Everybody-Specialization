@@ -55,3 +55,34 @@ for line in handle:
     if not line.startswith("From "): continue
     mylist = line.split()
     print mylist[2]
+
+# Objects and values
+# def delete_head(t):
+    del t[0]
+  letters = ['a','b','c'] #The parameter t and the variable letters are aliases for the same object
+  delete_head(letters)
+  print letters
+# the append method modiﬁes a list, but the + operator creates a new list:
+  t1.append(3), print t1; t1+[3], print t2
+
+# Exercise 1
+def chop(t):
+    del t[0]
+    del t[len(t)-1]
+    print t
+def middle(t):
+    endpos = len(t)-1
+    x = t[1:endpos]
+    print x
+word = ['a','b','c','d']
+chop(word) # b,c
+print word # b,c
+word = ['a','b','c','d']
+middle(word) # b,c
+print word #a, b, c,d
+
+# Debugging:
+# 1. Don’t forget that most list methods modify the argument and return None. 
+# 2. Pick an idiom and stick with it. t.append(x) or t = t + [x]  # t means a list
+# 3. Make copies to avoid aliasing, orig = t[:], t.sort()
+# 4. Lists, split, and ﬁles; pieces = emails.split('@'); thing = line.split(";"), split() default to be space
