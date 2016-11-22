@@ -1,1 +1,27 @@
+# eng2sp = dict() # {} means empty; 
+  eng2sp['one'] = 'uno' # {'one':'uno','three':'tres','two':'dos'}
+  print eng2sp['two'] # 'dos'. the elements of a dictionary are never indexed with integer indices buy by keys
+  len(eng2sp) #3 key-value pairs
+  'tres' in eng2sp # False, only can check "Key"; 'three' in eng2sp -> True
+  vals = eng2sp.values()
+  'tres' in vals -> True
+  
+word = 'brontosaurus'
+d = dict()
+for i in word:
+    if i not in d:
+        d[i] = 1
+    else:
+        d[i] = d[i] +1
+print d
 
+counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
+vals = counts['jan']
+print vals
+print counts.get('Jan',0) # if not find anything, return default value is 0
+
+word = 'brontosaurus'
+d = dict()
+for i in word:
+    d[i] = d.get(i,0) + 1
+print d
