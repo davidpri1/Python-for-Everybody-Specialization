@@ -19,6 +19,8 @@ numlist = list() # make an empty list before the loop starts
 while True:
     inp = raw_input('Enter a number:')
     if inp == 'done':
+        print "Maximum:", max(lst)
+        print "Minimum:", min(lst)
         break
     val = float(inp)
     numlist.append(val) # append to itself
