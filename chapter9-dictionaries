@@ -7,21 +7,31 @@
   'tres' in vals -> True
   
 word = 'brontosaurus'
-d = dict()
+d = dict()  # empty dict
 for i in word:
     if i not in d:
         d[i] = 1
     else:
         d[i] = d[i] +1
 print d
-
+;
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
 vals = counts['jan']
 print vals
-print counts.get('Jan',0) # if not find anything, return default value is 0
+for key in counts:
+    print key, counts[key]
+;
+file = raw_input('Enter file name:')
+try:
+    handle = open(file)
+except:
+    print 'File cannot be opened:', file
+    exit() # exit this program
+counts = dict()
+for line in handle:
+    line = line. split()
+    for word in line:
+        counts[word] = counts.get(word,0) + 1 # if not find anything value for this key, return default value is 0
+print counts
+;
 
-word = 'brontosaurus'
-d = dict()
-for i in word:
-    d[i] = d.get(i,0) + 1
-print d
