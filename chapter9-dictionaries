@@ -19,8 +19,10 @@ counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
 vals = counts['jan']
 print vals
 for key in counts:
-    print key, counts[key]
+    if counts[key] > 10 : 
+        print key, counts[key]
 ;
+import string  # string.punctuation  - '!"#$%&\'()*+,-./:;<=>?@[\\]ˆ_`{|}˜'
 file = raw_input('Enter file name:')
 try:
     handle = open(file)
@@ -29,9 +31,17 @@ except:
     exit() # exit this program
 counts = dict()
 for line in handle:
+    line = line.translate(None, string.punctuation) # New Code 
+    line = line.lower() # New Code
     line = line. split()
     for word in line:
         counts[word] = counts.get(word,0) + 1 # if not find anything value for this key, return default value is 0
 print counts
 ;
+counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100} 
+print list(counts) # list(key)
+lst = counts.keys()  # d.keys(), lst = list(counts); d.values(), vals = counts.values(); d.items()
+lst.sort() 
+for key in lst: 
+    print key, counts[key]
 
