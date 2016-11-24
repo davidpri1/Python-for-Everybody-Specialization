@@ -42,7 +42,7 @@ counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
 print list(counts) # list(key)
 lst = counts.keys()  # d.keys(), lst = list(counts); d.values(), vals = counts.values(); d.items()
 lst.sort() 
-for key in lst: 
+for key in lst: # you can use any word instead of key, for example, d=dict(), for i in d -> i must mean "keys"
     print key, counts[key]
 for a, b in counts.items(): # bigcount = None, bigword = None, 
                             # for word,count in counts.items(): 
