@@ -38,7 +38,7 @@ except:
 counts = dict()
 for line in handle:
     line = line.translate(None, string.punctuation) # New Code string.translate(s, table[, deletechars])
-    line = line.lower() # New Code
+    line = line.lower() # New Code python 2.5 or earlier print a.translate(string.maketrans('',''),string.punctuation)
     line = line. split()
     for word in line:
         counts[word] = counts.get(word,0) + 1 # if not find anything value for this key, return default value is 0
@@ -55,4 +55,8 @@ for a, b in counts.items(): # bigcount = None, bigword = None,
                             #     if bigcount is None or count > bigcount:
                             #         bigcount = count, bigword = word
     print a, b
--------------------------------------------------------------------------------------------
+
+# Debugging: 
+(1) scale down the input - it reads only the first n lines. If there's an error, reduce n to the smallest value to manifest the error
+(2) check summaries and type - A common cause of runtime errors is a value that is not the right type
+(3) sanity check, consistency check
