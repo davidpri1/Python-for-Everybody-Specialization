@@ -5,15 +5,21 @@
   'tres' in eng2sp # False, only can check "Key"; 'three' in eng2sp -> True
   vals = eng2sp.values()
   'tres' in vals -> True
-  
-word = 'brontosaurus'
-d = dict()  # empty dict
-for i in word:
-    if i not in d:
-        d[i] = 1
-    else:
-        d[i] = d[i] +1
-print d
+dev histogram(s):
+    d = dict()   # empty dict      
+    for i in s:           
+        if i not in d:                        
+            d[i] = 1
+        else:
+            d[i] = d[i] + 1    # revised. no need to use if anymore: for i in s: d[i]=d.get(i,0) + 1
+   return d  
+dev print_sorted_hist(d):
+    lst = d.keys()
+    lst.sort()
+    for i in lst:
+        print i, d[i]
+h = histogram('brontosaurus')
+print_sorted_hist(h)
 ;
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
 vals = counts['jan']
@@ -49,4 +55,4 @@ for a, b in counts.items(): # bigcount = None, bigword = None,
                             #     if bigcount is None or count > bigcount:
                             #         bigcount = count, bigword = word
     print a, b
-
+-------------------------------------------------------------------------------------------
