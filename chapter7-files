@@ -52,7 +52,7 @@ for line in handle2:
     line = line.rstrip()
     print line
 
-# debugging : move files between different systems, \n or \r (return) issue, wikipedia.org/wiki/ Newline.
+# debugging : move files between different systems, \n or \r (return) issue, wikipedia.org/wiki/ Newline. \t means <tab><whitespace>
 # Exercises 1
 filepath = raw_input('Enter full path of the file:') # C:\Users\Sharon\desktop\python\code\mbox-short.txt
 handle =  open(filepath)
