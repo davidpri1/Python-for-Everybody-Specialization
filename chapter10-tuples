@@ -41,8 +41,16 @@
  for key, val in counts.items():
     lst.append( (val,key) )
  lst.sort(Reverse = True)
-for a, b in lst[:10]:
+ for a, b in lst[:10]:
     print a, b
-     
-         
-     
+# using tuples as keys in dictionary
+ directory[last, first] = number
+ for last, first in directory:
+     print last, first, directory[last,first]
+# sequences: string, lists, and tuples -> lists are more common than tuples because it's mutable, has methods like sort, reverse
+  If you are passing a sequence as an argument to a function, using tuples reduces the potential for unexpected behavior due to aliasing.         
+  However Python provides the built-in functions sorted and reversed, 
+  which take any sequence as a parameter and return a new list with the same elements in a different order
+# reading, running, ruminating, retreating
+  Immutable types like integers, floats and strings are hashable; mutable types like lists and dictionaries are not
+   
