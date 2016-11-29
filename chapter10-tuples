@@ -49,8 +49,12 @@
      print last, first, directory[last,first]
 # sequences: string, lists, and tuples -> lists are more common than tuples because it's mutable, has methods like sort, reverse
   If you are passing a sequence as an argument to a function, using tuples reduces the potential for unexpected behavior due to aliasing.         
+  For a temporary variable that you will use and discard without modifying 
   However Python provides the built-in functions sorted and reversed, 
   which take any sequence as a parameter and return a new list with the same elements in a different order
 # reading, running, ruminating, retreating
   Immutable types like integers, floats and strings are hashable; mutable types like lists and dictionaries are not
-   
+
+pop() # If no index is specified, a.pop() removes and returns the last item in the list. https://docs.python.org/2/tutorial/datastructures.html
+index() method works both in lists and tuples
+days = ('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun') -> print days[2] -> "Wed"
