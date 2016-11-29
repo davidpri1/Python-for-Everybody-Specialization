@@ -18,8 +18,31 @@
   d = {'a':10,'b':1,'c':22} # {} dictonary 
   t = d.items() # items() is a method of dictionary that returns a list [] of tuples ()-> [('a',10),('c',22),('b',1)] # this is a list[]
   t.sort() # ascending by key
-  l = lst()
+  l = lst() # hand-constructing the list
   for key, value in t:
       l.append((value, key))
   l.sort()
   print l -> [(1,'b'),(10,'a'),(22,'c')] 
+# the ten most common words 
+ import string
+ handle = open ('romeo-full.txt')
+ counts = dict()
+ for line in handle:
+     line = line.translate(None, string.punctuation)
+     line = line.lower()
+     words = line.split()
+     for word in words:
+         if word not in counts:
+             count[word] = 1
+         else:
+             count[word] = count[word] + 1
+ # sort the dictionary by value
+ lst = list()
+ for key, val in counts.items():
+    lst.append( (val,key) )
+ lst.sort(Reverse = True)
+for a, b in lst[:10]:
+    print a, b
+     
+         
+     
