@@ -14,3 +14,12 @@
           lst2.append(word)
       return lst2
 # assigning: m = [ 'have', 'fun' ], x,y = m; a,b = b, a
+  addr = 'monty@python.org', uname, domin = addr.split('@')
+  d = {'a':10,'b':1,'c':22} # {} dictonary 
+  t = d.items() # items() is a method of dictionary that returns a list [] of tuples ()-> [('a',10),('c',22),('b',1)] # this is a list[]
+  t.sort() # ascending by key
+  l = lst()
+  for key, value in t:
+      l.append((value, key))
+  l.sort()
+  print l -> [(1,'b'),(10,'a'),(22,'c')] 
