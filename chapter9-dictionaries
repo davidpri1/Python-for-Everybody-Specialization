@@ -60,3 +60,5 @@ for a, b in counts.items(): # bigcount = None, bigword = None,
 (1) scale down the input - it reads only the first n lines. If there's an error, reduce n to the smallest value to manifest the error
 (2) check summaries and type - A common cause of runtime errors is a value that is not the right type
 (3) sanity check, consistency check
+
+Exercises:
