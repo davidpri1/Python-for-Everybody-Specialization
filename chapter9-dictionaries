@@ -39,10 +39,10 @@ counts = dict()
 for line in handle:
     line = line.translate(None, string.punctuation) # New Code string.translate(s, table[, deletechars])
     line = line.lower() # New Code python 2.5 or earlier print a.translate(string.maketrans('',''),string.punctuation)
-    line = line. split()
-    for word in line:
+    words = line. split()
+    for word in words:
         counts[word] = counts.get(word,0) + 1 # if not find anything value for this key, return default value is 0
-print counts
+print counts # or print counts.items() -> the output is a list of tuples[(),()]
 ;
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100} 
 print list(counts) # list(key)
