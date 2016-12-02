@@ -62,3 +62,14 @@ for a, b in counts.items(): # bigcount = None, bigword = None,
 (3) sanity check, consistency check
 
 Exercises:
+handle = open('C:\Users\Sharon\Desktop\Python\code\mbox-short.txt') # you can't just use\mbox-short, must including .file format
+# print handle
+counts = dict()
+for line in handle:
+    if line.startswith('From'): # startswith()
+        words = line.split()
+        # print words
+        word = words[2]
+        # print word
+        counts[word] = counts.get(word,0) +1
+print counts
