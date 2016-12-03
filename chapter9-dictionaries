@@ -62,14 +62,28 @@ for a, b in counts.items(): # bigcount = None, bigword = None,
 (3) sanity check, consistency check
 
 Exercises:
-handle = open('C:\Users\Sharon\Desktop\Python\code\mbox-short.txt') # you can't just use\mbox-short, must including .file format
+import string
+name = raw_input("Enter file:")
+if len(name) < 1 : name = "C:\Users\Sharon\Desktop\Python\code\mbox-short.txt"
+# if nothing is entered by user, it goes straight to the desired file
+handle = open(name)
 # print handle
 counts = dict()
 for line in handle:
-    if line.startswith('From'): # startswith()
-        words = line.split()
+    line = line.rstrip() #r.strip() to to remove any newline "\n"
+    #if line.startswith('From'): #actually including both From: and From
+    if line.startswith('From '):
+        words = line.split()     
         # print words
         word = words[2]
-        # print word
+        # print word  # new_words = word.split (':')
         counts[word] = counts.get(word,0) +1
-print counts
+# print counts
+# lst = counts.items() # for word, count in lst
+bigword = None
+bigcount = None
+for word, count in counts.items():
+    if bigcount == None or count > bigcount: # this is comparison ,not assignment
+        bigcount = count
+        bigword = word
+print bigword, bigcount
