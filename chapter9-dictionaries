@@ -75,9 +75,10 @@ for line in handle:
     if line.startswith('From '):
         words = line.split()     
         # print words
-        word = words[2]
-        # print word  # new_words = word.split (':')
-        counts[word] = counts.get(word,0) +1
+        word = words[1]
+        address = word.split('@') # print word  # new_words = word.split (':')
+        domain = address[1]
+        counts[domain] = counts.get(domain,0) +1
 # print counts
 # lst = counts.items() # for word, count in lst
 bigword = None
