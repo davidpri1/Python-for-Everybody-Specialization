@@ -20,4 +20,16 @@ y=re.findall('^F.+?:',x)--> print y --> ['From:']  # not gready matching takes t
 y=re.findall('\S+@\S+',x)--> print y --> stephen.marquard@uct.ac.za
 y=re.findall('^From (\S+@\S+)',x) --> print y --> stephen.marquard@uct.ac.za 
                       #()are not part of match, but where to start and stop in the return
-         
+y=re.findall('@()',x) # '@ meanslook through the string until you find an at sign       
+            ('@([^ ]*)',x) # inside [], ^ means NOT, so [^ ]means a signle non-blank character, * means report [^ ] many times
+            print y -> uct.ac.za
+y=re.findall('^From .*@([^ ]*)',x)      print y -> uct.ac.za
+
+stuff=re.findall('^X-DSPAM-Confidence: ([0-9.]+)',line)
+if len(stuff) !=1 : continue
+num = float(stuff[0])
+numlist.append(num)
+print max(numlist)
+
+if you want a special regular expression character to just behave normally, prefix it with'\'
+y=re.findall('\$[0-9.]+',x)   print y -> ['$10.00'] # \$ is a real dollar sigm, [0-9.] means a digit OR period
