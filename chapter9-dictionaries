@@ -23,7 +23,7 @@ print_sorted_hist(h)
 ;
 counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
 vals = counts['jan']
-print vals
+#rint vals
 for key in counts:
     if counts[key] > 10 : 
         print key, counts[key]
@@ -81,6 +81,9 @@ for line in handle:
         counts[domain] = counts.get(domain,0) +1
 # print counts
 # lst = counts.items() # for word, count in lst
+# lst.sort()
+# for a, b in lst:
+#    print a,b
 bigword = None
 bigcount = None
 for word, count in counts.items():
