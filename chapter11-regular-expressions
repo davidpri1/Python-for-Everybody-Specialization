@@ -8,7 +8,16 @@ result X-Sieve-DSPAM: (X-Plane is big:)
 fine-tuning match - no spaces between X and :, ^X-\S+:
 '\S' means match any non-whitespace character, '+' means one or more times
 
-using re.findall() like find () + var[] to extract the matched string
+using re.findall() like atpos=find ('@'),sppos=find(' ',atpos),var[atpos+1:sppos] 
+to extract the matched string
 x ='my 2 best numbers are 9 and 12'
 y = re.findall('[0-9]+',x) # [] is one charactor, [0-9]+ means at least one digit
 print y -> ['2','9','12']
+
+x='From: Using the : character'
+y=re.findall('^F.+:',x) --> print y --> ['From: Using the :']  # gready matching takes the largest string
+y=re.findall('^F.+?:',x)--> print y --> ['From:']  # not gready matching takes the shortest string
+y=re.findall('\S+@\S+',x)--> print y --> stephen.marquard@uct.ac.za
+y=re.findall('^From (\S+@\S+)',x) --> print y --> stephen.marquard@uct.ac.za 
+                      #()are not part of match, but where to start and stop in the return
+         
