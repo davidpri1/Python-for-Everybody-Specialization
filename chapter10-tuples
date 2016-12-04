@@ -22,20 +22,29 @@
   for key, value in t:
       l.append((value, key))
   l.sort()
+  print l[0] # minimum
   print l -> [(1,'b'),(10,'a'),(22,'c')] 
 # the ten most common words 
  import string
  handle = open ('romeo-full.txt')
  counts = dict()
- for line in handle:
-     line = line.translate(None, string.punctuation)
-     line = line.lower()
+ for line in handle:     
+     line = line.rstrip()
+     if len(line) < 1:continue  # must be put after strip(), /n is one character
+     line = line.translate(None, string.punctuation) # From stephenmarquarductacza Sat Jan 5 091416 2008
+     line = line.lower() # can't use lower() directly
      words = line.split()
      for word in words:
-         if word not in counts:
-             count[word] = 1
-         else:
-             count[word] = count[word] + 1
+         word = filter(str.isalpha, word) 
+         # only show a-z; str.isdigit means only show numbers; str.isalnum means only show a-z and numbers
+         if len(word) <1: continue
+         for i in word:
+             if i not in word:
+                 count[i] = 1
+             else:
+                 count[i] = count[i] + 1
+prints counts
+          
  # sort the dictionary by value
  lst = list()
  for key, val in counts.items():
