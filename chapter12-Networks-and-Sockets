@@ -1,1 +1,24 @@
+# an HTTP request 
+import socket
+mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+mysock.connect(('www.py4inf.com', 80))
+mysock.send('GET http://data.pr4e.org/intro-short.txt HTTP/1.0\n\n')
 
+while True:
+    data = mysock.recv(512)
+    if ( len(data) < 1 ) :
+        break
+    print data;
+mysock.close()
+# using urllib
+import urllib
+handle = urlib.urlopen('http://www.py4info.com/code/remeo.txt')
+for line in handle:
+    print line.strip() # only get context body, no headers
+counts = dict()
+for line in handle:
+    words = line.split()
+    for word in words:
+        counts[word] = counts.get(word,0)+1
+print counts
+    
