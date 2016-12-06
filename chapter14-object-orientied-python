@@ -13,5 +13,7 @@ an.party() # So far 3
   self.x is saying "x within self"
   in this case, self is alias of object an
   
-dir() commend lists capabilities/methods
-type()
+dir() commend lists capabilities/methods # party(),x
+type()   # instance
+
+# object lifecycle
