@@ -1,1 +1,8 @@
-
+# simple python objects
+class PartyAnimal: # making a PartyAnimal object 
+   x=0 # each PartyAnimal object has a bit of data
+   def party(self): # each PartyAnimal object has a bit of code
+       self.x = self.x + l
+       print "So far", self.x
+a = PartyAnimal() # a is an object
+a.party() # tell the object to run the party() code, = PartyAnimal.party(a)
