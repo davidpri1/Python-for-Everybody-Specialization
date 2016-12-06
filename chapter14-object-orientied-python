@@ -1,0 +1,17 @@
+# simple python objects
+class PartyAnimal: # making a PartyAnimal object # class is a tempalte (dog)
+   x=0 # each PartyAnimal object has a bit of data
+   def party(self): # each PartyAnimal object has a bit of code # party() is a method or message like bark(), capability of a class
+       self.x = self.x + 1
+       print "So far", self.x
+an = PartyAnimal() # a is an object, which contain data (x 0) and code ( party() )
+# an is an object or instance, a particular instance of a class - Lassie
+an.party() # tell the object to run the party() code, = PartyAnimal.party(a); So far 1
+an.party() # So far 2
+an.party() # So far 3
+# 'self' is a formal argument that refers to the object itself
+  self.x is saying "x within self"
+  in this case, self is alias of object an
+  
+dir() commend lists capabilities/methods
+type()
