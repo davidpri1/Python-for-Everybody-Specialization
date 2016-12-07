@@ -17,3 +17,27 @@ dir() commend lists capabilities/methods # party(),x
 type()   # instance
 
 # object lifecycle
+class .... :
+   x=0
+   def_init_(self):
+       print"I am constructed" # self an once appreas, execute this # normal
+
+   def party(self):
+   :
+   :
+
+   def_def_(self):
+       print"I am destructed", self.x   # rare
+
+class PartyAnimal:
+    x=0
+    name = " "
+    def_init_(self,nam):  # nam is the first parameter
+        self.name = nam
+        print self.name, "constructed"
+    def party(self):
+        self.x = self.x +1
+        print self.name, "party count", self.x
+s = PartyAnimal("Sally")
+   
+
