@@ -1,1 +1,7 @@
-
+SQLite
+table is also called relation; tuple means row, which is an 'object' and a set of fields; attribute means column or fields
+relation is a set of tuples; schema; first row is meta data
+- Create a table:
+- Retrieve data:
+- Insert data:
+- Delete data:
