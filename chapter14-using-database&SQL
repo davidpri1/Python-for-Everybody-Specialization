@@ -12,4 +12,9 @@ CREATE TABLE Users (
 SELECT COUNT(*) FROM Users - # Number of rows
 - Insert data:INSERT INTO Users (name, email) VALUES ('Kristin','kri@umiche.edu')
 - Delete data:DELETE FROM Users WHERE name='Kristin'; DELETE FROM Users
-- Update data:UPDATE Users SET name = 'Charles' WHERE email = 'sal@umiche.edu'
+- Update data:UPDATE ssers SET name = 'Charles' WHERE email = 'sal@umiche.edu'
+* using database with python
+import sqlite3
+conn = sqlite3.connect('emaildb.sqlite3')
+cur = conn.cursor()
+cur.execute('''DROP TABLE IF EXISTS counts''')
