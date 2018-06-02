@@ -1,1 +1,10 @@
-
+ord() function tells us the numeric value of a simple ASCII character; print(ord('\n'))
+Uppercase letters had a lower ordinal than lowercase letters. So, Hi is less than zzz all lowercase 
+byte string(uncoded), unicode string=regular string:  x=u'你好', print(type(x))-> class 'str'; x=b'abc', print(type(x))-> class 'bytes'
+#Python strings to Bytes
+While True:
+  data = mysock.recv(512)
+  if(len(data)<1):
+    break
+  mystring = data.decode()
+  print(mystring)
