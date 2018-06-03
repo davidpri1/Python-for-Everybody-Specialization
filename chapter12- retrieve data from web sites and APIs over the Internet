@@ -3,7 +3,7 @@ Uppercase letters had a lower ordinal than lowercase letters. So, Hi is less tha
 byte string(uncoded), unicode string=regular string:  x=u'你好', print(type(x))-> class 'str'; x=b'abc', print(type(x))-> class 'bytes'
 #Decode from bytes to strings
 import socket
-mysock=socket.socket(socket.AF_INET,socket.SOCK_TREAM)
+mysock=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 mysock.connect (('data.pret.org',80))
 cmd='GET http://data.pr4e.org/romeo.txt HTTP/1.0\n\n'.encode()
 mysock.send(cmd)
@@ -27,3 +27,19 @@ for line in fhand:
         counts[word]=counts.get(word,0)+1
 print(counts)
 ------------------------------------------------------------------------------
+BeatufilSoup install (1) https://pypi.python.org/pypi/beautifulsoup4 or download the file from http://www.py4e.com/code3/bs4.zip
+and unzip it in the same directory as this file. 
+import urllib.request, urllib.parse, urllib.error
+from bs4 import BeautifulSoup
+import ssl
+# Ignore SSL certificate errors
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+url = input('Enter - ')
+html = urllib.request.urlopen(url, context=ctx).read()
+soup = BeautifulSoup(html, 'html.parser')
+#retrieve all of the anchor tags
+tags=soup('a')
+for tag in tags:
+    print (tag.get('href',none))
