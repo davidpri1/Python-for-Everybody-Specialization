@@ -61,3 +61,31 @@ Contents:
 Second Page
 Attrs: {'href': 'http://www.dr-chuck.com/page2.htm'}
 ----------------------------------------------------------------
+spans = soup('span')
+list= [int(span.string) for span in spans]
+def sum_list(nums):
+    sum=0
+    for num in nums:
+        sum=sum+num
+    return sum
+print (sum_list(list))
+-----------------------------------------------------------------
+url = 'http://py4e-data.dr-chuck.net/known_by_Neeve.html'
+position = input ('Enter position:')
+position= int(position)
+times = input('Enter times:')
+times=int(times)
+t=0
+while t <times:
+    html = urllib.request.urlopen(url, context=ctx).read()
+    soup = BeautifulSoup(html, 'html.parser')
+    tags = soup('a')
+
+    x=0
+    for tag in tags:
+        x=x+1
+        if x==position:
+            url =tag.get('href',None)
+            print ('Retriving:',url)
+            break
+    t=t+1
