@@ -29,6 +29,8 @@ print(counts)
 ------------------------------------------------------------------------------
 BeatufilSoup install (1) https://pypi.python.org/pypi/beautifulsoup4 or download the file from http://www.py4e.com/code3/bs4.zip
 and unzip it in the same directory as this file. 
+PowerShell: PS C:\Users\Sharon> pip install bs4
+ 
 import urllib.request, urllib.parse, urllib.error
 from bs4 import BeautifulSoup
 import ssl
@@ -43,3 +45,8 @@ soup = BeautifulSoup(html, 'html.parser')
 tags=soup('a')
 for tag in tags:
     print (tag.get('href',none))
+
+PS C:\Users\Sharon\code\test> py test1.py
+Enter-http://www.dr-chuck.com/page1.htm
+http://www.dr-chuck.com/page2.htm
+----------------------------------------------------------------
