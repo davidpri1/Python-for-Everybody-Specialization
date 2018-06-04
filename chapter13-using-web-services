@@ -35,3 +35,6 @@ for item in lst:
     print('Name', item.find('name').text)
     print('Id', item.find('id').text)
     print('Attribute', item.get("x"))
+----------------------------------
+PS C:\Users\Sharon\code\test> set-location C:\Users\Sharon\code
+cd
