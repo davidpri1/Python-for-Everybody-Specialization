@@ -72,16 +72,31 @@ while True:
     print('lat', lat, 'lng', lng)
     location = js['results'][0]['formatted_address']
     print(location)
+
+# Exercise:     place_id = js["results"][0]["place_id"]
+                print(place_id)
 ------------------------------------------
+import urllib.request
+import json
+url='http://py4e-data.dr-chuck.net/comments_103949.json'
+uh = urllib.request.urlopen(url)
+data = uh.read().decode()
+info= json.loads(data)
+count=[]
+comments = info['comments']
+for comment in comments:
+    count.append(comment['count'])
+print (sum(count))
+------------------------------------------------------
 # Keep this file separate
 # https://apps.twitter.com/
 # Create new App and get the four strings
 # hidden.py
 def oauth():
     return {"consumer_key": "3mxRRcE6TtorVj7lyLaGYxur3",
-            "consumer_secret": "qYJcdaQDdNqcOLk5hJFZiPW1fifWCNnN3H9K6QhJuPIckefH4O",
+            "consumer_secret": "****daQDdNqcOLk5hJFZiPW1fifWCNnN3H9K6QhJuPIckefH4O",
             "token_key": "3901508536-cU4HFRNidDNIKBpX1rUDpyE18HYeMSJPRFD55Oq",
-            "token_secret": "BNICbAtAkkjthM8nyMGAqrldjakps1UsHGhecefkoRYsN"}
+            "token_secret": "****bAtAkkjthM8nyMGAqrldjakps1UsHGhecefkoRYsN"}
 -----------------------
 # twurl.py
 import urllib.request, urllib.parse, urllib.error
@@ -226,6 +241,5 @@ ElizabethCorish
    @drchuck Apologies just solved - although I think
 samleepan
    RT @gedoyle: #atlas winners at  #apereo18 - Notre
--------------------------
 
    
