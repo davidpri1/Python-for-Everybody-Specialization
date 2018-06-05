@@ -1,8 +1,8 @@
 5 Courses and 1 Capstone Project to earn certificate of this specialization. 
-Book: Python for Everybody: Exploring Data In Python 3
+
 This program was created by University of Michigan and instructed by Charles Severance, the associate professor at Information
 
-Courses:
+Courses:(Book- Python for Everybody: Exploring Data In Python 3)
 1.Programming for Everybody (Getting Started with Python)
 2.Python Data Structures
 3.Using Python to Access Web Data
