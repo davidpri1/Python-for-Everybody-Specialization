@@ -1,4 +1,5 @@
 5 Courses and 1 Capstone Project to earn certificate of this specialization. 
+Book: Python for Everybody: Exploring Data In Python 3
 This program was created by University of Michigan and instructed by Charles Severance, the associate professor at Information
 
 Courses:
@@ -12,4 +13,4 @@ Courses:
 Coursera: https://www.coursera.org/specializations/python ; 
 
 
-Set up: [Environment]::SetEnvironmentVariable("Path", "$env:Path;C:\Python27", "User") in PowerShell to configure it correctly. You also have to either restart PowerShell or your whole computer to get it to really be fixed.
+Set up: [Environment]::SetEnvironmentVariable("Path", "$env:Path;C:\Python36", "User") in PowerShell to configure it correctly. You also have to either restart PowerShell or your whole computer to get it to really be fixed.
