@@ -71,4 +71,107 @@ while True:
     print('lat', lat, 'lng', lng)
     location = js['results'][0]['formatted_address']
     print(location)
+------------------------------------------
+# Keep this file separate
+# https://apps.twitter.com/
+# Create new App and get the four strings
+# hidden.py
+def oauth():
+    return {"consumer_key": "3mxRRcE6TtorVj7lyLaGYxur3",
+            "consumer_secret": "qYJcdaQDdNqcOLk5hJFZiPW1fifWCNnN3H9K6QhJuPIckefH4O",
+            "token_key": "3901508536-cU4HFRNidDNIKBpX1rUDpyE18HYeMSJPRFD55Oq",
+            "token_secret": "BNICbAtAkkjthM8nyMGAqrldjakps1UsHGhecefkoRYsN"}
+-----------------------
+# twurl.py
+import urllib.request, urllib.parse, urllib.error
+import oauth
+import hidden
 
+# https://apps.twitter.com/
+# Create App and get the four strings, put them in hidden.py
+
+def augment(url, parameters):
+    secrets = hidden.oauth()
+    consumer = oauth.OAuthConsumer(secrets['consumer_key'],
+                                   secrets['consumer_secret'])
+    token = oauth.OAuthToken(secrets['token_key'], secrets['token_secret'])
+
+    oauth_request = oauth.OAuthRequest.from_consumer_and_token(consumer,
+                    token=token, http_method='GET', http_url=url,
+                    parameters=parameters)
+    oauth_request.sign_request(oauth.OAuthSignatureMethod_HMAC_SHA1(),
+                               consumer, token)
+    return oauth_request.to_url()
+
+
+def test_me():
+    print('* Calling Twitter...')
+    url = augment('https://api.twitter.com/1.1/statuses/user_timeline.json',
+                  {'screen_name': 'drchuck', 'count': '2'})
+    print(url)
+    connection = urllib.request.urlopen(url)
+    data = connection.read()
+    print(data)
+    headers = dict(connection.getheaders())
+    print(headers)
+-----------------------------
+# twtest.py
+import urllib.request, urllib.parse, urllib.error
+from twurl import augment
+import ssl
+
+# https://apps.twitter.com/
+# Create App and get the four strings, put them in hidden.py
+
+print('* Calling Twitter...')
+url = augment('https://api.twitter.com/1.1/statuses/user_timeline.json',
+              {'screen_name': 'drchuck', 'count': '2'})
+print(url)
+
+# Ignore SSL certificate errors
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
+connection = urllib.request.urlopen(url, context=ctx)
+data = connection.read()
+print(data)
+
+print ('======================================')
+headers = dict(connection.getheaders())
+print(headers)
+----------------------
+# twitter1.py
+import urllib.request, urllib.parse, urllib.error
+import twurl
+import ssl
+
+# https://apps.twitter.com/
+# Create App and get the four strings, put them in hidden.py
+
+TWITTER_URL = 'https://api.twitter.com/1.1/statuses/user_timeline.json'
+
+# Ignore SSL certificate errors
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
+while True:
+    print('')
+    acct = input('Enter Twitter Account:')
+    if (len(acct) < 1): break
+    url = twurl.augment(TWITTER_URL,
+                        {'screen_name': acct, 'count': '2'})
+    print('Retrieving', url)
+    connection = urllib.request.urlopen(url, context=ctx)
+    data = connection.read().decode()
+    print(data[:250])
+    headers = dict(connection.getheaders())
+    # print headers
+    print('Remaining', headers['x-rate-limit-remaining'])
+--------------
+Enter Twitter Account:python testing 1234567abcd
+Retrieving https://api.twitter.com/1.1/statuses/user_timeline.json?oauth_consumer_key=3mxRRcE6TtorVj7lyLaGYxur3&oauth_timestamp=1528164872&oauth_nonce=70490940&oauth_version=1.0&screen_name=python%20testing%201234567abcd&count=2&oauth_token=3901508536-cU4HFRNidDNIKBpX1rUDpyE18HYeMSJPRFD55Oq&oauth_signature_method=HMAC-SHA1&oauth_signature=xSwbXupBmzC0pKo9LyxL6sntyTA%3D
+[{"created_at":"Sat Jan 23 01:04:42 +0000 2016","id":690701658465112065,"id_str":"690701658465112065","text":"Start 2016 by going on a date w\/ a model &amp; actress @juliaannconley Learn more: https:\/\/t.co\/qXmK98GoXw https:\/\/t.co\/ZEG9pruBch","
+Remaining 897
+----------------
