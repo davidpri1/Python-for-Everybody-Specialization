@@ -1,3 +1,4 @@
+Create, Read, Update, Delete (Single Table)
 SQLite - (Oracle/MySql/Access,API, Developer)- database schema/model
 www.sqlitebrowser.org
 table is also called relation; tuple means row, which is an 'object' and a set of fields; attribute means column or fields
