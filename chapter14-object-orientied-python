@@ -39,5 +39,44 @@ class PartyAnimal:
         self.x = self.x +1
         print self.name, "party count", self.x
 s = PartyAnimal("Sally")
-   
+----------------------------------------------------------------------------
+print(ord(‘H’) ->72, print (ord(‘e’))-> 101, print(ord(‘\n’))->10
+ASCII, UTF-8 (Bytes), X=a’bcd’, type(x)->byte : In python3, all strings are Unicode, x=u’你好’, type(x)->str
+Class(string), method/message(string.upper), field/attribute, object/instance
+class PartyAnimal:
+X=0
+    Name=’’
+def _init_(self,z):
+  self.name=z
+  print(‘self.name, “constructed”)
+  
+def party(self):
+  self.x=self.x+1
+  print(self.name, “party count”, self.x)
+  
+#def _del_(self):
+#print (‘I am destructed’,self.x)
 
+class FootballFan(PartyAnimal):  # Objective inheritance
+points=0
+def touchdown(self):
+  self.points=self.points+7
+  self.party()
+print(self.name, “points”, self.points)
+
+an=PartyAnimal()
+s=PartyAnimal(‘Sally’)
+s.party()
+j=PartyAnimal(‘Jim’)
+j.party()
+j=FootballFan(‘Jim’)
+j.party()
+j.touchdown()
+an.party()
+an.party()
+an.party()
+an=42
+
+print (“Type”,’type(an))
+print(“Dir”, dir(an))
+print(‘an contains’,an)
