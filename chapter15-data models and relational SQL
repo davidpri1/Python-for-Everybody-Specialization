@@ -1,1 +1,20 @@
+Example: Tack-management model
+Track (Starting point): id, title, rating len, count, album_id, genre_id,..............
+Album (Track belongs to Album): id, title, artist_id -> id is primary key,title is logical key, artist_id is foreign key
+Artist (Album belongs to Artist): id, name
+Genre (If we change one genre row, track will change): id, name
+Title (Part of Track)
+Rating (Part of Track)
+Len (Part of Track)
+Count (Part of Track)
 
+CREATE TABLE Track (
+  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, 
+  title TEXT, 
+  album_id INTEGER, 
+  genre_id INTEGER,
+  len INTEGER, rating INTEGER, count INTEGER 
+)
+
+insert into Artist (name) values ('Led Zepplin') 
+insert into Artist (name) values ('AC/DC')
